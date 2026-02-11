@@ -1,0 +1,24 @@
+#pragma once
+
+#include "CommandParser.h"
+#include "soewrappers.h"
+#include "NetworkId.h"
+
+class EmuCommandParser : public CommandParser {
+	char data[0x58];
+
+	DEFINE_VTABLE(newVtable);
+
+public:
+	void ctor();
+	static bool parse(const soe::vector<soe::unicode>& args, const soe::unicode& originalCommand, soe::unicode& resultUnicode);
+	void initializeVtable();
+
+	bool performParsing(const NetworkId& userId, const soe::vector<soe::unicode>& argv,
+		const soe::unicode& originalCommand, soe::unicode& result, const CommandParser* node);
+	DEFINE_VMETHOD(0x4, performParsing);
+
+	static void showHelp(soe::unicode& resultUnicode);
+
+	static void appendMessage(int msg, float value);
+};
