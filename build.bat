@@ -56,16 +56,12 @@ if %ERRORLEVEL% neq 0 (
 :compile
 echo.
 echo ================================================================
-echo Compiling SWG Decoration Plugin v2.0 (x64)
+echo Compiling SWG Furniture Mover v5.0 (x64)
 echo ================================================================
 echo.
 
-cl /nologo /EHsc /O2 /LD /DWIN32_LEAN_AND_MEAN /I"lib" ^
+cl /nologo /EHsc /O2 /LD /DWIN32_LEAN_AND_MEAN ^
     DiscordProxy64.cpp ^
-    lib\hook.c ^
-    lib\buffer.c ^
-    lib\trampoline.c ^
-    lib\hde\hde64.c ^
     /link /OUT:discord-rpc.dll user32.lib kernel32.lib
 
 if %ERRORLEVEL% neq 0 (
