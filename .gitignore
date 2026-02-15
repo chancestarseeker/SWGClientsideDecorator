@@ -36,10 +36,25 @@
 *.log
 *.lastbuildstate
 
+# Build artifacts
 *.idb
+*.exp
 
-*.suo
-*ilk
+# Debug symbols
 *.pdb
+
+# Visual Studio
+*.suo
+*.ilk
 *.sdf
 *.opendb
+*.VC.db
+*.VC.opendb
+*.user
+UpgradeLog.htm
+.vs/
+
+# Build output directories
+Debug/
+Release/
+x64/
